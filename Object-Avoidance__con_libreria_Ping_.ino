@@ -97,8 +97,12 @@ void controlla_bene(){
   delay(300);
   ultrasonic_sensor.write(90);
   delay(500);
-  
-  if(distanzaDestra >= distanzaSinistra){
+
+  if((distanzaDestra < 40) and (distanzaSinistra < 40)){
+    destra();
+    delay(1300);
+    stop();
+  }else if(distanzaDestra >= distanzaSinistra){
     destra();
     delay(750);
     stop();
